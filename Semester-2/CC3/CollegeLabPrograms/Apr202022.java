@@ -6,7 +6,7 @@
 
 public class Apr202022 {
 	public static void main(String args[]) {
-		InnerInterfaceDemo.main(new String[]{});
+		InterfaceWhichContainsClass.InnerClass.main(new String[]{});
 	}
 }
 
@@ -149,9 +149,10 @@ class MyCalculator implements AdditionInterface,SubtractionInterface {
 
 
 /*
- * interfaces inside a class
+ * interfaces inside a class and classes inside an interface
  */
 class InnerInterfaceDemo {
+	
 	interface MyInnerInterface {
 		void mult(int a,int b);
 		void div(int a,int b);
@@ -175,5 +176,15 @@ class InnerInterfaceDemo {
 		
 		MyInnerInterface2 refObj = () -> System.out.println("Woof");
 		refObj.bark();
+	}
+}
+interface InterfaceWhichContainsClass {
+	class InnerClass {
+		void display(){
+			System.out.println("Hello World!");
+		}
+		public static void main(String args[]){
+			new InnerClass().display();
+		}
 	}
 }
