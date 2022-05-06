@@ -1,18 +1,22 @@
-import java.io.*;
-import java.util.*;
+/**
+ * @author : Darpan Bhattacharya
+ * @details : RKMVCC Rahara, 2nd Semester, B.Sc. CS (hons)
+ * @date : 20.04.2022
+ */
 
 public class May062022
 {
 	public static void main(String args[])
 	{
-		MyThread.main(new String[]{});
+		Driver.main(new String[]{});
 	}
 }
 
-class MyThread implements Runnable
+
+class MyThread0 implements Runnable
 {
 	Thread t;
-	MyThread(String name)
+	MyThread0(String name)
 	{
 		t=new Thread(this,name);
 		t.start();
@@ -34,7 +38,7 @@ class MyThread implements Runnable
 	}
 	public static void main(String args[])
 	{
-		MyThread myThread1=new MyThread("Thread 1");
+		MyThread0 myThread1=new MyThread0("Thread 1");
 		try
 		{
 			System.out.println(myThread1.t.isAlive());
@@ -44,7 +48,7 @@ class MyThread implements Runnable
 		{
 			System.out.println("Caught exception in thread "+myThread1.t);
 		}
-		MyThread myThread2=new MyThread("Thread 2");
+		MyThread0 myThread2=new MyThread0("Thread 2");
 		try
 		{
 			myThread2.t.join();
@@ -57,4 +61,136 @@ class MyThread implements Runnable
 		System.out.println(myThread2.t.isAlive());
 		System.out.println(Thread.currentThread());
 	}
+}
+
+
+class Meow
+{
+	void meow()
+	{
+		System.out.println("meow");
+		System.out.println(Thread.currentThread());
+		try
+		{
+			Thread.sleep(500);
+		}
+		catch(InterruptedException ie){ }
+	}
+}
+class MyThread implements Runnable
+{
+	Thread t;
+	Meow m;
+	MyThread(String name,Meow mm)
+	{
+		t=new Thread(this,name);
+		m=mm;
+		//~ t.start();
+	}
+	@Override
+	public void run()
+	{
+		synchronized(m)
+		{
+			for(int i=0;i<5;i++) m.meow();
+			
+			//~ try
+			//~ {
+				//~ for(int i=0;i<5;i++)
+				//~ {
+					//~ System.out.println("Currently running thread "+t+" value of i is "+i);
+					//~ Thread.sleep(1000);
+				//~ }
+			//~ }
+			//~ catch(InterruptedException e)
+			//~ {
+				//~ System.out.println("Caught exception in thread "+t);
+			//~ }
+		}	
+	}
+	//~ public static void main(String args[])
+	//~ {
+		//~ MyThread myThread1=new MyThread("t1");
+		//~ MyThread myThread2=new MyThread("t2");
+		
+		//~ myThread1.t.start();
+		//~ myThread2.t.start();
+
+		//~ try
+		//~ {
+			//~ myThread1.t.join();
+			//~ myThread2.t.join();
+		//~ }
+		//~ catch(InterruptedException e)
+		//~ {
+			//~ throw e;
+		//~ }
+
+		//~ try
+		//~ {
+			//~ System.out.println(myThread1.t.isAlive());
+			//~ myThread1.t.join();
+		//~ }
+		//~ catch(InterruptedException e)
+		//~ {
+			//~ System.out.println("Caught exception in thread "+myThread1.t);
+		//~ }
+		//~ MyThread myThread2=new MyThread("t2");
+		//~ try
+		//~ {
+			//~ myThread2.t.join();
+		//~ }
+		//~ catch(InterruptedException e)
+		//~ {
+			//~ System.out.println("Caught exception in thread "+myThread2.t);
+		//~ }
+		//~ System.out.println(myThread1.t.isAlive());
+		//~ System.out.println(myThread2.t.isAlive());
+		//~ System.out.println(Thread.currentThread());
+	//~ }
+}
+class Driver
+{
+	public static void main(String args[])
+	{
+		Meow m=new Meow();
+		MyThread myThread1=new MyThread("t1",m);
+		MyThread myThread2=new MyThread("t2",m);
+		
+		myThread1.t.start();
+		myThread2.t.start();
+
+		try
+		{
+			myThread1.t.join();
+			myThread2.t.join();
+		}
+		catch(InterruptedException e)
+		{
+			//~ throw e;
+		}
+
+		//~ try
+		//~ {
+			//~ System.out.println(myThread1.t.isAlive());
+			//~ myThread1.t.join();
+		//~ }
+		//~ catch(InterruptedException e)
+		//~ {
+			//~ System.out.println("Caught exception in thread "+myThread1.t);
+		//~ }
+		//~ MyThread myThread2=new MyThread("t2");
+		//~ try
+		//~ {
+			//~ myThread2.t.join();
+		//~ }
+		//~ catch(InterruptedException e)
+		//~ {
+			//~ System.out.println("Caught exception in thread "+myThread2.t);
+		//~ }
+		System.out.println(myThread1.t.isAlive());
+		System.out.println(myThread2.t.isAlive());
+		System.out.println(Thread.currentThread());
+	}
+
 }
