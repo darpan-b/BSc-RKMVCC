@@ -1,7 +1,7 @@
 /**
  * @author : Darpan Bhattacharya
  * @details : RKMVCC Rahara, 2nd Semester, B.Sc. CS (hons)
- * @date : 20.04.2022
+ * @date : 06.05.2022
  */
 
 public class May062022
@@ -85,7 +85,6 @@ class MyThread implements Runnable
 	{
 		t=new Thread(this,name);
 		m=mm;
-		//~ t.start();
 	}
 	@Override
 	public void run()
@@ -93,61 +92,8 @@ class MyThread implements Runnable
 		synchronized(m)
 		{
 			for(int i=0;i<5;i++) m.meow();
-			
-			//~ try
-			//~ {
-				//~ for(int i=0;i<5;i++)
-				//~ {
-					//~ System.out.println("Currently running thread "+t+" value of i is "+i);
-					//~ Thread.sleep(1000);
-				//~ }
-			//~ }
-			//~ catch(InterruptedException e)
-			//~ {
-				//~ System.out.println("Caught exception in thread "+t);
-			//~ }
 		}	
 	}
-	//~ public static void main(String args[])
-	//~ {
-		//~ MyThread myThread1=new MyThread("t1");
-		//~ MyThread myThread2=new MyThread("t2");
-		
-		//~ myThread1.t.start();
-		//~ myThread2.t.start();
-
-		//~ try
-		//~ {
-			//~ myThread1.t.join();
-			//~ myThread2.t.join();
-		//~ }
-		//~ catch(InterruptedException e)
-		//~ {
-			//~ throw e;
-		//~ }
-
-		//~ try
-		//~ {
-			//~ System.out.println(myThread1.t.isAlive());
-			//~ myThread1.t.join();
-		//~ }
-		//~ catch(InterruptedException e)
-		//~ {
-			//~ System.out.println("Caught exception in thread "+myThread1.t);
-		//~ }
-		//~ MyThread myThread2=new MyThread("t2");
-		//~ try
-		//~ {
-			//~ myThread2.t.join();
-		//~ }
-		//~ catch(InterruptedException e)
-		//~ {
-			//~ System.out.println("Caught exception in thread "+myThread2.t);
-		//~ }
-		//~ System.out.println(myThread1.t.isAlive());
-		//~ System.out.println(myThread2.t.isAlive());
-		//~ System.out.println(Thread.currentThread());
-	//~ }
 }
 class Driver
 {
@@ -167,27 +113,7 @@ class Driver
 		}
 		catch(InterruptedException e)
 		{
-			//~ throw e;
 		}
-
-		//~ try
-		//~ {
-			//~ System.out.println(myThread1.t.isAlive());
-			//~ myThread1.t.join();
-		//~ }
-		//~ catch(InterruptedException e)
-		//~ {
-			//~ System.out.println("Caught exception in thread "+myThread1.t);
-		//~ }
-		//~ MyThread myThread2=new MyThread("t2");
-		//~ try
-		//~ {
-			//~ myThread2.t.join();
-		//~ }
-		//~ catch(InterruptedException e)
-		//~ {
-			//~ System.out.println("Caught exception in thread "+myThread2.t);
-		//~ }
 		System.out.println(myThread1.t.isAlive());
 		System.out.println(myThread2.t.isAlive());
 		System.out.println(Thread.currentThread());
