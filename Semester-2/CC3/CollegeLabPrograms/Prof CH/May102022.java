@@ -6,7 +6,7 @@
 
 public class May102022 {
   public static void main(String args[]) {
-    MyThreadDriver.main(new String[] {});
+    ThreadSync.main(new String[]{});
   }
 }
 
@@ -50,13 +50,38 @@ class MyThreadDriver {
 
 
 class Counter {
-  int count;
-  public void increment() {
-    count++;
-  }
+  int count = 0;
+  public Counter() {}
+  public Counter(int l) { count += l; }
+  public void increment() { count++; }
 }
 class ThreadSync {
   public static void main(String args[]) {
+    Counter ct = new Counter();
+    
+    Thread t1 = new Thread(()-> {
+      for(int i = 0; i < 5; i++) {
+        ct.increment();
+        try {
+          Thread.sleep(200);
+        } catch(InterruptedException ie) {}
+      }
+    }, "MyThread1");
+    
+    Thread t2 = new Thread(()-> {
+      for(int i = 0; i < 5; i++) {
+        ct.increment();
+        try {
+          Thread.sleep(500);
+        } catch(InterruptedException ie) {}
+      }
+    }, "MyThread2");
 
+    t1.start();
+    t2.start();
+    
+    try { t1.join(); } catch(InterruptedException ie) {}
+    try { t2.join(); } catch(InterruptedException ie) {}
+    System.out.println(ct.count);
   }
 }
