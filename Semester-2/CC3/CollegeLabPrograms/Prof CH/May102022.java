@@ -53,27 +53,31 @@ class Counter {
   int count = 0;
   public Counter() {}
   public Counter(int l) { count += l; }
-  public void increment() { count++; }
+  /*
+   * if the function is not synchronized, then the value of count after
+   * execution of both the threads will not always be equal to 2000.
+   */
+  public synchronized void increment() { count++; }
 }
 class ThreadSync {
   public static void main(String args[]) {
     Counter ct = new Counter();
     
     Thread t1 = new Thread(()-> {
-      for(int i = 0; i < 5; i++) {
+      for(int i = 0; i < 1000; i++) {
         ct.increment();
-        try {
-          Thread.sleep(200);
-        } catch(InterruptedException ie) {}
+        //~ try {
+          //~ Thread.sleep(200);
+        //~ } catch(InterruptedException ie) {}
       }
     }, "MyThread1");
     
     Thread t2 = new Thread(()-> {
-      for(int i = 0; i < 5; i++) {
+      for(int i = 0; i < 1000; i++) {
         ct.increment();
-        try {
-          Thread.sleep(500);
-        } catch(InterruptedException ie) {}
+        //~ try {
+          //~ Thread.sleep(500);
+        //~ } catch(InterruptedException ie) {}
       }
     }, "MyThread2");
 
