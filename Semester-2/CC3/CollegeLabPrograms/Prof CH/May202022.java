@@ -5,6 +5,7 @@
  */
 
 import java.io.*;
+import java.nio.charset.Charset;
 
 public class May202022 {
     public static void main(String args[]) throws Exception {
@@ -55,11 +56,11 @@ Then decrypt it to a separate file in decrypted form */
 class MyFileHandling {
     public static void main(String[] args) throws Exception {
         FileReader fr = new FileReader("/home/first/Documents/715DBCC3Java/FolderMay202022/File1.txt");
-        FileWriter fw = new FileWriter("/home/first/Documents/715DBCC3Java/FolderMay202022/File2.txt");
+        FileWriter fw = new FileWriter("/home/first/Documents/715DBCC3Java/FolderMay202022/File2.txt",  Charset.forName("utf-8"));
         while (true) {
             int curChar = fr.read();
             if (curChar != -1) {
-                fw.write((char)(curChar + 69));
+                fw.write((char)(curChar + 102));
             } else {
                 break;
             }
@@ -68,16 +69,24 @@ class MyFileHandling {
         fw.close();
 
         fr = new FileReader("/home/first/Documents/715DBCC3Java/FolderMay202022/File2.txt");
-        fw = new FileWriter("/home/first/Documents/715DBCC3Java/FolderMay202022/File3.txt");
+        fw = new FileWriter("/home/first/Documents/715DBCC3Java/FolderMay202022/File3.txt",  Charset.forName("utf-8"));
         while (true) {
             int curChar = fr.read();
             if (curChar != -1) {
-                fw.write((char)(curChar - 69));
+                fw.write((char)(curChar - 132));
             } else {
                 break;
             }
         }
         fr.close();
+        fw.close();
+
+        fw = new FileWriter("/home/first/Documents/715DBCC3Java/FolderMay202022/File2.txt",  Charset.forName("utf-8"));
+        fw.write((char)0x9a6);
+        fw.write((char)0x9b0);
+        fw.write((char)0x9cd);
+        fw.write((char)0x9aa);
+        fw.write((char)0x9a3);
         fw.close();
     }
 }
