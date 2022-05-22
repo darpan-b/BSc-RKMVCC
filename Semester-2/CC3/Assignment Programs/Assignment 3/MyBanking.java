@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 abstract class BankAccount {
   final float MIN_BALANCE = 1000.0f;
   String accHolder;
