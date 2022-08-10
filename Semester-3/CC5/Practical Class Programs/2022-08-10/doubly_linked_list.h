@@ -1,42 +1,84 @@
-#include "doubly_linked_list.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int main()
+typedef struct node
 {
-    node *head = NULL;
-    while (1)
-    {
-        printf("Press 1 to insert node.\n");
-        printf("Press 2 to delete node.\n");
-        printf("Press 3 to reverse list.\n");
-        printf("Press 4 to print list.\n");
-        printf("Press any other number to exit.\n");
-        printf("Enter your choice:\n");
-        int choice;
-        scanf("%d", &choice);
+    int data;
+    struct node *previous;
+    struct node *next;
+} node;
 
-        switch (choice)
-        {
-            int num, pos;
-            case 1:
-                printf("Enter the number you want to enter:\n");
-                scanf("%d", &num);
-                printf("Enter the position (0-indexed) that you want to enter in:\n");
-                scanf("%d", &pos);
-                insert(&head, num, pos);
-                break;
-            case 2:
-                printf("Enter the position (0-indexed) that you want to delete from:\n");
-                scanf("%d", &pos);
-                delete(&head, pos);
-                break;
-            case 3:
-                reverse(&head);
-                break;
-            case 4:
-                print(head);
-                break;
-            default:
-                exit(0);
-        }
+
+node *create_node(int data)
+{
+    node *newnode = (node *)malloc(sizeof(node));
+    newnode->data = data;
+    newnode->previous = NULL;
+    newnode->next = NULL;
+    return newnode;
+}
+
+void print(node *head)
+{
+    printf("List is: ");
+    for (node *tmp = head; tmp != NULL; tmp = tmp->next)
+    {
+        printf("%d ", tmp->data);
     }
+    printf("\n");
+}
+
+void insert(node **head, int data, int pos)
+{
+    node *newnode = create_node(data);
+    if (*head == NULL)
+    {
+        *head = newnode;
+        return;
+    }
+    if (pos == 0)
+    {
+        newnode->next = *head;
+        (*head)->previous = newnode;
+        *head = newnode;
+        return;
+    }
+    int i = 0;
+    node *tmp = *head;
+    for (; i < pos - 1 && tmp->next != NULL; i++, tmp = tmp->next);
+    newnode->next = tmp->next;
+    newnode->previous = tmp;
+    tmp->next = newnode;
+}
+
+void delete(node **head, int pos)
+{
+    if (*head == NULL) return;
+    if (pos == 0)
+    {
+        node *temp = *head;
+        if (temp->next != NULL) temp->previous = NULL;
+        *head = (*head)->next;
+        free(temp);
+        return;
+    }
+    int i = 0;
+    node *tmp = *head;
+    for (; i < pos && tmp->next != NULL; i++, tmp = tmp->next);
+    if (tmp->previous != NULL) tmp->previous->next = tmp->next;
+    if (tmp->next != NULL) tmp->next->previous = tmp->previous;
+    free(tmp);
+}
+
+void reverse(node **head)
+{
+    node *temp;
+    for (node *tmp = *head; tmp != NULL; tmp = tmp->previous)
+    {
+        if (tmp->next == NULL) temp = tmp;
+        node *temp1 = tmp->next;
+        tmp->next = tmp->previous;
+        tmp->previous = temp1;
+    }
+    *head = temp;
 }
