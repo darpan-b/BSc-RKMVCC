@@ -28,6 +28,17 @@ void print(node *head)
     printf("\n");
 }
 
-void insert_at_beginning(int data, node **tail)
+void insert_at_beginning(int data, node **head, node **tail)
 {
+    node *newnode = create_node(data);
+    (*tail)->next = newnode;
+    *head = newnode;
 }
+
+void insert_at_end(int data, node **head, node **tail)
+{
+    node *newnode = create_node(data);
+    (*tail)->next = newnode;
+    *tail = newnode;
+}
+
