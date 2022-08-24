@@ -10,6 +10,7 @@ int main()
         printf("Press 1 to insert data in the list.\n");
         printf("Press 2 to delete data from the list.\n");
         printf("Press 3 to reverse the list.\n");
+        printf("Press any other integer to exit.\n");
         printf("Enter your choice:\n");
         int choice;
         scanf("%d", &choice);
