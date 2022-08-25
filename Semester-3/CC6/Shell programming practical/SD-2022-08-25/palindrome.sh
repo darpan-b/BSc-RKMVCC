@@ -13,8 +13,6 @@ do
     n=`expr $n / 10`
 done
 
-echo $rev
-
 if [ $rev -eq $m ]
 then
     echo "Palindrome"
