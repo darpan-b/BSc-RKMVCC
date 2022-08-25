@@ -1,4 +1,5 @@
 # check if a number is perfect square or not
+# sum of consecutive odd numbers 1+3+... always results in perfect square (proof?)
 
 echo "Enter a number"
 read n
