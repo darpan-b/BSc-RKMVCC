@@ -3,6 +3,12 @@
 echo "Enter a number"
 read n
 
+if [ $n -le 1 ]
+then
+	echo "Not prime"
+	exit
+fi
+
 for (( i=2; i*i <= n; i++ ))
 do
 	if [ `expr $n % $i` -eq 0 ]

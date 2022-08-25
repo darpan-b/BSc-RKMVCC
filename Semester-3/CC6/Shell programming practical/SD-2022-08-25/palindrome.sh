@@ -8,14 +8,14 @@ rev=0
 
 while [ $n -gt 0 ]
 do
-    d=`expr $n % 10`
-    rev=`expr $rev \* 10 + $d`
-    n=`expr $n / 10`
+	d=`expr $n % 10`
+	rev=`expr $rev \* 10 + $d`
+	n=`expr $n / 10`
 done
 
 if [ $rev -eq $m ]
 then
-    echo "Palindrome"
+	echo "Palindrome"
 else
-    echo "Not palindrome"
+	echo "Not palindrome"
 fi
