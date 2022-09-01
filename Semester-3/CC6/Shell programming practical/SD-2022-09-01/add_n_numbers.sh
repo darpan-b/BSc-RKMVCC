@@ -3,7 +3,7 @@
 echo "Enter number of elements in the array:"
 read n
 
-echo "Enter" n "numbers"
+echo "Enter" $n "numbers"
 for (( i=0; i<n; i++ ))
 do
 	read a[$i]
