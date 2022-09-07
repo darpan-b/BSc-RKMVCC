@@ -11,9 +11,9 @@ int main()
 		printf("Enter your choice:\n");
 		int choice;
 		scanf("%d", &choice);
-		
+
 		node *head = NULL;
-		
+
 		switch (choice)
 		{
 		case 1:
@@ -25,6 +25,7 @@ int main()
 			int position;
 			scanf("%d", &position);
 			insert_node(&head, data, position);
+			printf("head data=%d next data=%d %d\n",head->data,head->next->data,head==NULL);
 			break;
 		}
 		case 2:
