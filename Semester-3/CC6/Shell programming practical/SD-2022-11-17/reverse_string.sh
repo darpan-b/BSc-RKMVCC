@@ -6,3 +6,4 @@ do
 	ch=`echo $str | cut -c $i`
 	echo -n $ch
 done
+echo ""
