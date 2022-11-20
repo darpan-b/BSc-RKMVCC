@@ -64,28 +64,6 @@ int main(){
       default:
         exit(0);
     }
-    // switch(choice){
-    //   case 1:
-    //     printf("Enter the data that you want to enter in the list:\n");
-    //     int data;
-    //     scanf("%d", &data);
-    //     printf("Enter the index(0-indexed) that you want to enter the data to:\n");
-    //     int pos;
-    //     scanf("%d", &pos);
-    //     insert(data,pos);
-    //     break;
-    //   case 2:
-    //     printf("Enter the index that you want to delete data from:\n");
-    //     int pos;
-    //     scanf("%d", &pos);
-    //     delete(pos);
-    //     break;
-    //   case 3:
-    //     print();
-    //     break;
-    //   default:
-    //     exit(0);
-    // }
   }
   return 0;
 }
