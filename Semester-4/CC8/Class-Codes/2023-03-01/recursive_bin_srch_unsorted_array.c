@@ -2,33 +2,33 @@
 #include <stdlib.h>
 
 void swap(int* lhs, int* rhs) {
-  int k = *lhs;
-  *lhs = *rhs;
-  *rhs = k;
+    int k = *lhs;
+    *lhs = *rhs;
+    *rhs = k;
 }
 
 int partition(int* arr, int l, int h) {
-  int pivot = arr[h];
-  int cidx = l - 1;
-  for (int i = l; i <= h; i++) {
-    if (arr[i] < pivot) {
-      cidx++;
-      swap(&arr[i], &arr[cidx]);
+    int pivot = arr[h];
+    int cidx = l - 1;
+    for (int i = l; i <= h; i++) {
+        if (arr[i] < pivot) {
+        cidx++;
+        swap(&arr[i], &arr[cidx]);
+        }
     }
-  }
-  cidx++;
-  swap(&arr[cidx], &arr[h]);
-  return cidx;
+    cidx++;
+    swap(&arr[cidx], &arr[h]);
+    return cidx;
 }
 
 void quick_sort(int* arr, int l, int h) {
-  if (l >= h) {
-    return;
-  }
-  int k = partition(arr, l, h);
-  quick_sort(arr, l, k - 1);
-  quick_sort(arr, k + 1, h);
-}
+    if (l >= h) {
+        return;
+    }
+    int k = partition(arr, l, h);
+    quick_sort(arr, l, k - 1);
+    quick_sort(arr, k + 1, h);
+}   
 
 int binsrch(int* arr, int lo, int hi, int key){
     if(lo > hi){
