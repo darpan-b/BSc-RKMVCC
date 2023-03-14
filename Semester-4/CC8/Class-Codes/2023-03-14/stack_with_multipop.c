@@ -6,17 +6,20 @@
 int* stk;
 int capacity;
 int top = -1;
+int count;
 
 void push(int value) {
     if (top == capacity - 1) {
         return;
     }
     stk[++top] = value;
+    count++;
 }
 
 void multipop(int to_pop) {
     while (top > -1 && to_pop--) {
         top--;
+        count++;
     }
 }
 
@@ -52,8 +55,9 @@ int main() {
             multipop(numele);
             peek();
         } else {
-            exit(0);
+            break;
         }
     }
+    printf("Average cost = %lf\n", count * 1.0 / capacity);
     return 0;
 }
