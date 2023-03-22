@@ -1,4 +1,4 @@
-rking Lot Management System
+Algorithms for various modules of Parking Lot Management System
 ================================================================
 
 
@@ -34,3 +34,18 @@ _________________________
 >> STEP 3: If slot exists, then delete slot
 >> STEP 4: Print appropriate message to the user
 >> STEP 5: Stop
+
+
+```````````````````````````````````````````````````````````````````````````````````````
+____________________
+CUSTOMER MANAGEMENT
+____________________
+
+=: Add Customer Details :=
+---------------------------
+
+=: Update Customer Details :=
+---------------------------
+
+````````````````````````````````````````````````````````````````````````````````````````
+
