@@ -1,0 +1,36 @@
+rking Lot Management System
+================================================================
+
+
+`````````````````````````````````````````````````````````````````````````````````````
+_________________________
+PARKING SPACE MANAGEMENT
+_________________________
+
+=: Add Slot Details :=
+-----------------------
+>> STEP 1: Start
+>> STEP 2: Read area, slot-number, length, and breadth of slot
+>> STEP 3: If it is possible to add parking slot, add parking slot
+>> STEP 4: Else do not add parking slot
+>> STEP 5: Print appropriate message to the user
+>> STEP 6: Stop
+
+
+=: Update Slot Details :=
+--------------------------
+>> STEP 1: Start
+>> STEP 2: Read slot-number, field to be updated anrking slot, ud updated field
+>> STEP 3: If it is possible to update papdate parking slot
+>> STEP 4: Else do not update parking slot details
+>> STEP 5: Print appropriate message to the user
+>> STEP 6: Stop
+
+
+=: Delete Slot Details :=
+--------------------------
+>> STEP 1: Start
+>> STEP 2: Read slot-number to be deleted
+>> STEP 3: If slot exists, then delete slot
+>> STEP 4: Print appropriate message to the user
+>> STEP 5: Stop
