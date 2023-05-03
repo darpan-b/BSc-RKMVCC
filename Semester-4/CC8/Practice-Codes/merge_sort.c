@@ -13,7 +13,6 @@ void merge(int* arr, int lo, int mid, int hi) {
         else arr[cidx++] = (left_array[lptr] <= right_array[rptr] ? left_array[lptr++] : right_array[rptr++]);
     }
 }
-
 void merge_sort(int* arr, int lo, int hi) {
     if (lo >= hi) return;
     int mid = (lo + hi) / 2;
