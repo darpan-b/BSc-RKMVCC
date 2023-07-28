@@ -8,5 +8,12 @@ public class ClientSideApplication {
     s.setCourse("Java Bean");
     s.setRoll(1);
   }
+  
+  void registerStudent() {
+    ServerSideApplication s = new ServerSideApplication();
+    System.out.println(s.getRoll());
+    System.out.println(s.getId());
+    System.out.println(s.getName());
+    System.out.println(s.getCourse());
+  }
 }
-
