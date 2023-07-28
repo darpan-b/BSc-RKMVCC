@@ -7,6 +7,8 @@ public class ClientSideApplication {
     s.setId(101);
     s.setCourse("Java Bean");
     s.setRoll(1);
+    ClientSideApplication c = new ClientSideApplication();
+    c.registerStudent();
   }
   
   void registerStudent() {
