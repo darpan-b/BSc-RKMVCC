@@ -1,5 +1,7 @@
-Q1. Design a DFA which accepts strings 1100 or 1010 only.
-Q2. Design a DFA which accepts set of all strings that contain 0101 as a substring.
-Q3. Design a DFA which accepts set of all strings containing 3 consecutive zeroes.
-Q4. Design a DFA which does not accept set of all strings containing 3 consecutive zeroes.
-Q5. Design a DFA which accepts set of all strings which are divisible by 5 for binary alphabets.
+Q1. Design a DFA which accepts even number of 0s and even number of 1s.
+Q2. Design a DFA which accepts odd number of 0s and odd number of 1s.
+Q3. Design a DFA which accepts strings 1100 or 1010 only.
+Q4. Design a DFA which accepts set of all strings that contain 0101 as a substring.
+Q5. Design a DFA which accepts set of all strings containing 3 consecutive zeroes.
+Q6. Design a DFA which does not accept set of all strings containing 3 consecutive zeroes.
+Q7. Design a DFA which accepts set of all strings which are divisible by 5 for binary alphabets.
