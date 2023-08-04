@@ -5,7 +5,7 @@ public class Client {
 		BankServer bankServer = new BankServer();
 		bankServer.setUsername("Jishnu");
 		bankServer.setUserid("6842002486");
-		bankServer.setAccount_no(100101);
+		bankServer.setAccount_no(1000101);
 		bankServer.setBalance(5_00_000.0);
 		bankServer.setPassword("ffsrfseff");
 		Client c = new Client();
