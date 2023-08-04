@@ -48,5 +48,11 @@ public class BankServer implements java.io.Serializable {
 				+ account_no + ", balance=" + balance + "]";
 	}
 	
+	public void credit(double amount) {
+		this.balance += amount;
+	}
+	public void debit(double amount) {
+		if (amount <= this.balance) this.balance -= amount;
+	}
 
 }
