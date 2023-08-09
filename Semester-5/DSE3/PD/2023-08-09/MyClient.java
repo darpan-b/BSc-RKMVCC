@@ -2,7 +2,7 @@ import java.net.*;
 import java.io.*;
 
 public class MyClient {  
-public static void main(String args[]) throws Exception {  
+  public static void main(String args[]) throws Exception {  
     Socket s = new Socket("192.168.0.233", 3333);  
     DataInputStream din = new DataInputStream(s.getInputStream());  
     DataOutputStream dout = new DataOutputStream(s.getOutputStream());  
