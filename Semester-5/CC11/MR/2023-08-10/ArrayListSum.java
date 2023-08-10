@@ -6,10 +6,13 @@ public class ArrayListSum {
     Scanner in = new Scanner(System.in);
     ArrayList<Integer> arl = new ArrayList<>();
     while (true) {
-      System.out.println("Enter an integer to be added to the arraylist; Press -1 to exit:");
-      int x = in.nextInt();
-      if (x == -1) break;
-      else arl.add(x);
+      System.out.println("Enter an integer to be added to the arraylist; Press anything else to exit:");
+      try {
+        int x = in.nextInt();
+        arl.add(x);
+      } catch (Exception e) {
+        break;
+      }
     }
     int answer = 0;
     for (int i = 0; i < arl.size(); i++) answer += arl.get(i);
