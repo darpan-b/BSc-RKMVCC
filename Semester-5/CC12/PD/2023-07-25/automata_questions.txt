@@ -1,3 +1,4 @@
+DFA DESIGN
 Q1. Design a DFA which accepts even number of 0s and even number of 1s.
 Q2. Design a DFA which accepts odd number of 0s and odd number of 1s.
 Q3. Design a DFA which accepts strings 1100 or 1010 only.
@@ -5,3 +6,14 @@ Q4. Design a DFA which accepts set of all strings that contain 0101 as a substri
 Q5. Design a DFA which accepts set of all strings containing 3 consecutive zeroes.
 Q6. Design a DFA which does not accept set of all strings containing 3 consecutive zeroes.
 Q7. Design a DFA which accepts set of all strings which are divisible by 5 for binary alphabets.
+
+MINIMIZATION OF DFA
+Q8, Q9. Minimize the DFA (check mobile gallery).
+
+REGULAR EXPRESSION TO NFA AND CONVERT IT INTO A DFA
+Q10. Write the regular expression for the language starting and ending with 'a' and having combination of 'b' in between.
+Q11. Write the regular expression for the language accepting all the strings in which any number of 'a' is followed by any number of 'b' is followed by any number of 'c'.
+Q12. Write the regular expression for the language starting with 'a' but not having consecutive 'b's.
+Q13. Write the regular expression for the language accepting all the strings which are starting with 1 and ending with 0, over $\sum=\{0, 1\}$.
+
+
