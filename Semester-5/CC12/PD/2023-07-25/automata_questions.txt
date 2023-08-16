@@ -16,4 +16,9 @@ Q11. Write the regular expression for the language accepting all the strings in 
 Q12. Write the regular expression for the language starting with 'a' but not having consecutive 'b's.
 Q13. Write the regular expression for the language accepting all the strings which are starting with 1 and ending with 0, over $\sum=\{0, 1\}$.
 
+CONTEXT FREE GRAMMAR (for production rules, check PD Sir's WhatsApp group)
+Q14. Derive the string "00101" for leftmost derivation. Also show the non-inverted tree and derivation tree.
+Q15. Derive the string "aabbabba" for leftmost derivation. Also show the non-inverted tree and derivation tree.
+Q16. Derive the string "abb" for leftmost derivation. Also show the non-inverted tree and derivation tree.
+
 
