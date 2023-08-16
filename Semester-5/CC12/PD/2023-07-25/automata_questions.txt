@@ -7,6 +7,7 @@ Q5. Design a DFA which accepts set of all strings containing 3 consecutive zeroe
 Q6. Design a DFA which does not accept set of all strings containing 3 consecutive zeroes.
 Q7. Design a DFA which accepts set of all strings which are divisible by 5 for binary alphabets.
 
+[UPD: 2023-08-14]
 MINIMIZATION OF DFA
 Q8, Q9. Minimize the DFA (check mobile gallery).
 
@@ -16,6 +17,7 @@ Q11. Write the regular expression for the language accepting all the strings in 
 Q12. Write the regular expression for the language starting with 'a' but not having consecutive 'b's.
 Q13. Write the regular expression for the language accepting all the strings which are starting with 1 and ending with 0, over $\sum=\{0, 1\}$.
 
+[UPD: 2023-08-16]
 CONTEXT FREE GRAMMAR (for production rules, check PD Sir's WhatsApp group)
 Q14. Derive the string "00101" for leftmost derivation. Also show the non-inverted tree and derivation tree.
 Q15. Derive the string "aabbabba" for leftmost derivation. Also show the non-inverted tree and derivation tree.
