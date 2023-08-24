@@ -1,0 +1,39 @@
+<!--
+Q. Create an event-driven program to print a table of numbers from 5 to 15 and their squares and
+cubes in a webpage.
+-->
+<html>
+  <head>
+    <title>Numbers, Squares and Cubes</title>
+  </head>
+  <body>
+    <h1>Squares and Cubes</h1>
+    <table id='OtherData' border=1px, cellspacing=0px cellpadding=5px>
+      <tr>
+        <th>Number</th>
+        <th>Square</th>
+        <th>Cube</th>
+      </tr>
+    </table>
+
+    <script>
+      const res = document.getElementById('OtherData');
+      function generateSquare(x) {
+        return x * x;
+      }
+      function generateCube(x) {
+        return x * generateSquare(x);
+      }
+      let data;
+      for (let i = 5; i <= 15; i++) {
+        data = `<tr>
+                  <td>${i}</td>
+                  <td>${generateSquare(i)}</td>
+                  <td>${generateCube(i)}</td>
+                </tr>`;
+        res.innerHTML += data;
+      }
+    </script>
+
+  </body>
+</html>
