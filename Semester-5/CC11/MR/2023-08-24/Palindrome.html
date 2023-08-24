@@ -1,0 +1,40 @@
+<!--
+Q. Write a program in JavaScript to check whether a string is palindrome or not. The string must be
+in uppercase.
+-->
+
+<html>
+  <head>
+    <title>Palindrome</title>
+  </head>
+  
+  <body>
+    <h1>Palindrome Checker</h1>
+    <p id='InputString'>Input string = </p>
+    <p id='PalindromeCheck'></p>
+    
+    <script>
+      let str = prompt('Enter a string');
+      str = str.toUpperCase();
+      document.getElementById('InputString').innerHTML += str;
+      if (isPalindrome(str)) {
+        console.log('Hello');
+        document.getElementById('PalindromeCheck').innerHTML = 'The entered string is palindrome.';
+      }
+      else {
+        document.getElementById('PalindromeCheck').innerHTML = 'The entered string is not palindrome.';
+      }
+      
+      function isPalindrome(s) {
+        let n = s.length;
+        for (let i = 0; i < n / 2; i++) {
+          if (s[i] != s[n - 1 - i]) {
+            return false;
+          }
+        }
+        return true;
+      }
+    </script>
+    
+  </body>
+</html>
