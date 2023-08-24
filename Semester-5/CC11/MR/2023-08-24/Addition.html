@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Addition</title>
+  </head>
+  
+  <body>
+    <table>
+      <tr>
+        <td>First Number</td>
+        <td><input type='text' id='num1'></td>
+      </tr>
+      <tr>
+        <td>Second Number</td>
+        <td><input type='text' id='num2'></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type='button' value='Add' onclick='sum()'></td>
+      </tr>
+    </table>
+    <p id='result'></p>
+    
+    <script>
+      function sum() {
+        if (document.getElementById('num1').value == '') {
+          alert('First value cannot be empty!');
+          document.getElementById('num1').focus();
+        }
+        else if (isNaN(document.getElementById('num1').value)) {
+          alert('First value is not a number!');
+          document.getElementById('num1').value = '';
+          document.getElementById('num1').focus();
+        }
+        else if (document.getElementById('num2').value == '') {
+          alert('Second value cannot be empty!');
+          document.getElementById('num2').focus();
+        }
+        else if (isNaN(document.getElementById('num2').value)) {
+          alert('Second value is not a number!');
+          document.getElementById('num2').value = '';
+          document.getElementById('num2').focus();
+        }
+        else {
+          let a = Number(document.getElementById('num1').value);
+          let b = Number(document.getElementById('num2').value);
+          let sum = a + b;
+          document.getElementById('result').innerHTML = 'Sum = ' + sum;
+        }
+      }
+    </script>
+    
+  </body>
+</html>
