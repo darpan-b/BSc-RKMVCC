@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Sum and Average</title>
+  </head>
+  <body>
+    <h1>Sum and Average of numbers terminating with 0</h1>
+    <p id="result"></p>
+    <script>
+      let numele = 0;
+      while (true) {
+        numele = Number(prompt("Enter the number of elements"));
+        if (isNaN(numele) || numele < 0) {
+          alert('Invalid input!');
+        }
+        else {
+          break;
+        }
+      }
+      let sum = 0, avg = 0;
+      for (let i = 0; i < numele; i++) {
+        let x = prompt("Enter a positive number terminating with 0:");
+        if (isNaN(x) || Number(x) < 0 || Number(x) % 10 != 0) {
+          alert("Invalid entry!");
+          i--;
+        }
+        else {
+          sum += Number(x);
+        }
+      }
+      avg = sum / numele;
+      document.getElementById('result').innerHTML = 
+        "Sum = " + sum + "<br>" +
+        "Average = " + avg;
+    </script>
+  </body>
+</html>
