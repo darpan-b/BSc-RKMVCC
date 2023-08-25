@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Sum and Average</title>
+  </head>
+  <body>
+    <h1>Sum and Average of numbers, part 2</h1>
+    <p id="result"></p>
+    <script>
+      let sum = 0, avg = 0, numele = 0;
+      while (true) {
+        let x = Number(prompt("Enter a positive number, press 0 to quit:"));
+        if (isNaN(x) || Number(x) < 0) {
+          alert("Invalid entry!");
+        }
+        else if (x == 0) {
+          break;
+        }
+        else {
+          sum += Number(x);
+          numele++;
+        }
+      }
+      avg = sum / numele;
+      document.getElementById('result').innerHTML = 
+        "Sum = " + sum + "<br>" +
+        "Average = " + avg;
+    </script>
+  </body>
+</html>
