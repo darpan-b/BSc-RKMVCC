@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Interest Calculation</title>
+  </head>
+  <body>
+    <h1>Interest Calculation</h1>
+    Original amount = Rs. 1000/-
+    <table>
+      <tr>
+        <td>Enter the number of years:</td>
+        <td><input type="Number" id="years"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="Calculate" onclick="calc()"></td>
+      </tr>
+    </table>
+    <table border=1px cellpadding=2px cellspacing=0px id="result"></table>
+    <script>
+      let done = false;
+      function calc() {
+        if (done) return;
+        var years;
+        let amount;
+        if (document.getElementById("years").value <= 0) {
+          alert("Please enter a valid value");
+        }
+        else {
+          done = true;
+          years = Number(document.getElementById("years").value);
+          for(let i = 1; i <= years; i++) {
+            let ans = 1000 * ((1 + (5 / 100)) ** i);
+            ans = ans.toFixed(2);
+            console.log(ans);
+            let a = `<tr><td>${i}</td><td>${ans}</td></tr>`;
+            document.getElementById("result").innerHTML += a;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

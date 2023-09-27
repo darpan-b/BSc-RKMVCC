@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Replace Word in String</title>
+  </head>
+
+  <body>
+    <h1>Find and Replace</h1>
+    <p>Enter a string: <input type='text' id='inp'></p>
+    <p>Enter the word to find in the string: <input type='text' id='word'></p>
+    <p>Enter the word to replace it with in the string: <input type='text' id='replace'></p>
+    <input type='button' value='Find and Replace All' onclick='find_and_replace()'>
+    <p id='output'></p>
+
+    <script>
+      function find_and_replace() {
+        let words = document.getElementById('inp').value.split(' ');
+        for (let i = 0; i < words.length; i++) {
+          if (words[i] == document.getElementById('word').value) {
+            words[i] = document.getElementById('replace').value;
+          }
+        }
+        document.getElementById('output').innerHTML += words.join(' ');
+      }
+    </script>
+  </body>
+</html>
