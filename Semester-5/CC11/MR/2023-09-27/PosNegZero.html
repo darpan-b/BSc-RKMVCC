@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Positive, Negative and Zero Count</title>
+  </head>
+
+  <body>
+    <h1>Count number of Positive, Negative, and Zeroes</h1>
+    <p id='Positive'>Number of positive numbers = </p>
+    <p id='Negative'>Number of negative numbers = </p>
+    <p id='Zeroes'>Number of zeroes = </p>
+
+    <script>
+      let n = prompt('Enter the number of inputs:');
+      let pos = 0, neg = 0, z = 0;
+      while (n--) {
+        let k = prompt('Enter a number:');
+        if (isNaN(k)) {
+          alert('Wrong input, Please enter again!');
+          n++;
+        }
+        else {
+          if (k > 0) pos++;
+          else if (k < 0) neg++;
+          else z++;
+        }
+      }
+      document.getElementById('Positive').innerHTML += pos;
+      document.getElementById('Negative').innerHTML += neg;
+      document.getElementById('Zeroes').innerHTML += z;
+    </script>
+  </body>
+</html>
